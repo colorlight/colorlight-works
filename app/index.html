@@ -4,9 +4,16 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>bootstrap</title>
+    <title>colorlight的杂货铺</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
     <!-- Place favicon.ico in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -15,8 +22,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main1.css">
-    <link rel="stylesheet" href="styles/haha.css">
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     
   </head>
@@ -25,26 +31,112 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
+    <div class="container-fluid">
+       ...
+  </div>
+
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
+        <ul class="nav nav-tabs pull-right">
           <li class="active">
-            <a href="#">Home</a>
+            <a href="/">主页</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a  href="#">博客</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#">简历</a>
           </li>
         </ul>
-        <h3 class="text-muted">bootstrap</h3>
+        <h3 class="text-muted">作品集</h3>
       </div>
+      
+      <ul class="catlog-list">
+        <li class="">
+          <h2>
+            <a href="javascript:void(0);">fasjf</a>
+          </h2>
+          <dl>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="">
+           <h2>
+            <a href="javascript:void(0);">fasjf</a>
+          </h2>
+          <dl>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="">
+          <h2>
+            <a href="javascript:void(0);">fasjf</a>
+          </h2>
+          <dl>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+            <dd>
+              <a href="#">dsfsdfs</a>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+
+      <script>
+
+        var toggleLinks = $('.catlog-list h2 a');
+        toggleLinks.click(function(ele){
+          $(ele.target).parent().next().toggle();
+        })
+      </script>
+
+      <button type="button" class="btn btn-primary btn-lg active">Primary button</button>
+
+
 
       <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+
+        <h1>I have done</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, numquam, est? Asperiores consectetur beatae quo mollitia, dicta illum! Accusamus, ex, vitae. Deserunt suscipit eaque veritatis quos, in voluptatem, unde eius.</p>
+        
       </div>
 
       <div class="row marketing">
@@ -75,11 +167,7 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  
     
     <!-- build:js scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
