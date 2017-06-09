@@ -3,11 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>图片轮换</title>
+	<link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
 	<!-- bower:js -->
 	<script src="/bower_components/jquery/dist/jquery.js"></script>
 	<!-- endbower -->
+
+    <link rel="stylesheet" href="/styles/picturn.css">
+
 </head>
 <body>
 	
+	<div class="slide-container">
+		<ol class="little-circle">
+			<li>小圆圈d</li>
+			<li>小圆圈sdf</li>
+			<li>小圆圈1/li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">就是要放我1</div>
+			<div class="item">就是要放我2</div>
+			<div class="item">就是要放我3</div>
+		</div>
+		<a href="" class="left carousel-control">leftarrow</a>
+		<a href="" class="right carousel-control">rightarrow</a>
+	</div>
+	<script>
+		$('.left.carousel-control').click(ele =>{
+			let i = 0;
+			i++;
+			retrun i;
+		})
+	</script>
 </body>
 </html>
