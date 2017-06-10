@@ -1,8 +1,42 @@
+.slide-container{
+	position: relative;
+}
 .carousel-inner{
-	.item{
+	position: relative;
+	overflow: hidden;
+	width: 500px;
+	> .item{
+		/*position: absolute;*/
 		display: none;
+		width: 500px;
+		height: 500px;
+		transition: 0.6s ease-in-out transform;
+
+		&.active, &.next, &.prev{
+			display: block;
+		}
+		&.active{
+			transform: translate(0);
+		}
+
+		&.right-next{
+			position: absolute;
+			/*top: 0;*/
+			transform: translate(100%);
+		}
+
+		&.right-prev{
+			position: absolute;
+			/*top: 0;*/
+			transform: translate(-100%);
+		}
 	}
-	.active{
-		display: initial;
+	
+}
+
+
+.little-circle{
+	.circle-active{
+		color: red;
 	}
 }

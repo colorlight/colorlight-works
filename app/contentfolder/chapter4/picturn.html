@@ -16,23 +16,54 @@
 	
 	<div class="slide-container">
 		<ol class="little-circle">
-			<li>小圆圈d</li>
+			<li class="circle-active">小圆圈d</li>
 			<li>小圆圈sdf</li>
-			<li>小圆圈1/li>
+			<li>小圆圈1</li>
 		</ol>
 		<div class="carousel-inner">
-			<div class="item active">就是要放我1</div>
-			<div class="item">就是要放我2</div>
-			<div class="item">就是要放我3</div>
+			<div class="item active" style="background: red">就是要放我1</div>
+			<div class="item next" style="background: yellow">就是要放我2</div>
+			<div class="item" style="background: green">就是要放我3</div>
 		</div>
-		<a href="" class="left carousel-control">leftarrow</a>
-		<a href="" class="right carousel-control">rightarrow</a>
+		<a href="javascript:void(0);" class="left carousel-control">leftarrow</a>
+		<a href="javascript:void(0);" class="right carousel-control">rightarrow</a>
 	</div>
 	<script>
+		let globalIndex = 0;
+		let listNum = $('.little-circle').children().length;
 		$('.left.carousel-control').click(ele =>{
-			let i = 0;
-			i++;
-			retrun i;
+			let lastIndex =  (globalIndex--) % listNum;
+			let currIndex = (globalIndex) % listNum;
+			$('.carousel-inner div:eq(' + lastIndex + ')').removeClass('active');
+			$('.carousel-inner div:eq(' + currIndex + ')').addClass('active');
+
+			$('.little-circle li:eq(' + lastIndex + ')').removeClass('circle-active');
+			$('.little-circle li:eq(' + currIndex + ')').addClass('circle-active');
+		})
+
+		$('.right.carousel-control').click(ele =>{
+			let lastIndex =  (globalIndex++) % listNum;
+			let currIndex = (globalIndex) % listNum;
+			let nextIndex = (globalIndex + 1) % listNum;
+			let lastlastIndex = (globalIndex -2) % listNum;
+			
+			//去掉上上一个元素的prev
+			$('.carousel-inner div:eq(' + lastlastIndex + ')').removeClass('prev');
+
+			// 上一个元素去掉active，并添加prev
+			$('.carousel-inner div:eq(' + lastIndex + ')').removeClass('active');
+			$('.carousel-inner div:eq(' + lastIndex + ')').addClass('prev');
+			
+		    // 去掉当前的next class给当前元素添加 active
+			$('.carousel-inner div:eq(' + currIndex + ')').addClass('active');
+			$('.carousel-inner div:eq(' + currIndex + ')').removeClass('next');
+
+			// 给下一个元素添加next class
+			$('.carousel-inner div:eq(' + nextIndex + ')').addClass('next');
+
+
+			$('.little-circle li:eq(' + lastIndex + ')').removeClass('circle-active');
+			$('.little-circle li:eq(' + currIndex + ')').addClass('circle-active');
 		})
 	</script>
 </body>
