@@ -5,31 +5,63 @@
 	position: relative;
 	overflow: hidden;
 	width: 500px;
+	height: 500px;
 	> .item{
 		/*position: absolute;*/
+		position: relative;
 		display: none;
 		width: 500px;
 		height: 500px;
-		transition: 0.6s ease-in-out transform;
+		// transition: 1s left;
+	
 
-		&.active, &.next, &.prev{
+		&.active, &.right, &.left{
 			display: block;
 		}
 		&.active{
-			transform: translate(0);
+			/*transform: translate(0);*/
+			left:0;
+
 		}
 
-		&.next{
+		&.right{
 			position: absolute;
 			/*top: 0;*/
-			transform: translate(100%);
+			/*transform: translate(100%);*/
+			left: 100%;
 		}
 
-		&.prev{
+		&.left{
 			position: absolute;
 			/*top: 0;*/
-			transform: translate(-100%);
+			/*transform: translate(-100%);*/
+			left: -100%;
+			
+			
 		}
+		&.right-to-center, &.center-to-left, &.center-to-right,
+		&.left-to-center{
+			display: block;
+			position: absolute;
+		}
+
+		&.right-to-center{
+			animation: 1s RightToCenter;
+		}
+
+		&.center-to-right{
+			animation: 1s CenterToRight ;
+		}
+
+		&.left-to-center{
+			animation: 1s LeftToCenter;
+		}
+
+		&.center-to-left{
+			animation: 1s CenterToLeft;
+		}
+
+
 	}
 	
 }
@@ -39,4 +71,31 @@
 	.circle-active{
 		color: red;
 	}
+}
+
+
+
+@keyframes RightToCenter {
+  0% { transform: translate(100%)}
+  50% { transform: translate(50%) }
+  100% { transform: translate(0%)}
+
+}
+
+@keyframes CenterToLeft {
+  0% { transform: translate(0) }
+  50% { transform: translate(-50%) }
+  100% { transform: translate(-100%) }
+}
+
+@keyframes LeftToCenter {
+  0% {transform: translate(-100%); }
+  50% { transform: translate(-50%);; }
+  100% { transform: translate(0%);}
+}
+
+@keyframes CenterToRight{
+	0% {transform: translate(0%); }
+ 	50% { transform: translate(50%);; }
+  	100% { transform: translate(100%);}
 }
