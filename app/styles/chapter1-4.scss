@@ -1,0 +1,17 @@
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+.roll{ 
+ 	height:165px; 
+ 	overflow:hidden; 
+ 	.list{ 
+ 		margin:0;
+ 	}
+
+ }
+     
+h2, ul{
+	text-align: center;
+}
