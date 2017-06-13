@@ -21,9 +21,9 @@
 			<li>小圆圈1</li>
 		</ol>
 		<div class="carousel-inner">
-			<div class="item active" style="background: red">就是要放我1</div>
-			<div class="item" style="background: green">就是要放我3</div>
-			<div class="item" style="background: yellow">就是要放我2</div>
+			<div class="item active" style="background: red">1</div>
+			<div class="item" style="background: green">2</div>
+			<div class="item" style="background: yellow">3</div>
 			
 		</div>
 		<script>
@@ -45,13 +45,21 @@
 			var currIndex = (globalIndex) % listNum;
 			
 			var $currEle = $('.carousel-inner div:eq(' + currIndex + ')');
-			var $lastEle =  $('.carousel-inner div:eq(' + lastIndex + ')');
-
-			$('.carousel').children().removeClass();
-			$('.carousel').children().addClass('item');
-
-			$currEle.addClass('left-to-center');
+		    var $lastEle =  $('.carousel-inner div:eq(' + lastIndex + ')');
+	
+			$currEle.addClass('left-to-center active');
 			$lastEle.addClass('center-to-right');
+
+			$lastEle.get(0).offsetWidth;
+			$currEle.on('webkitAnimationEnd',function(){
+				$lastEle.attr( "class", "item" );
+				$currEle.removeClass("left-to-center");
+				
+			})
+
+
+			$('.little-circle li:eq(' + lastIndex + ')').removeClass('circle-active');
+			$('.little-circle li:eq(' + currIndex + ')').addClass('circle-active');
 
 		})
 
@@ -76,17 +84,17 @@
 			// $('.carousel-inner div:eq(' + nextIndex + ')').addClass('next');
 
 
-			// $('.little-circle li:eq(' + lastIndex + ')').removeClass('circle-active');
-			// $('.little-circle li:eq(' + currIndex + ')').addClass('circle-active');
+			$('.little-circle li:eq(' + lastIndex + ')').removeClass('circle-active');
+			$('.little-circle li:eq(' + currIndex + ')').addClass('circle-active');
 
 			var $currEle = $('.carousel-inner div:eq(' + currIndex + ')');
 		    var $lastEle =  $('.carousel-inner div:eq(' + lastIndex + ')');
 	
-			$currEle.addClass('right-to-center');
+			$currEle.addClass('right-to-center active');
 			$lastEle.addClass('center-to-left');
-			$lastEle.get(0).offsetWidth;
 			$currEle.on('webkitAnimationEnd',function(){
-				$lastEle.attr( "class", "item" );
+				$lastEle.get(0).className = "item";
+				$currEle.get(0).classList.remove("right-to-center");
 				
 			})
 
